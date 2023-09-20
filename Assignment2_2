@@ -1,0 +1,20 @@
+.data
+x: .word 0 	# initializes x with 0
+i: .word        # initializes I with no value
+j: .word        # initializes J with no value
+
+.text
+
+lw $s0, x           # loads x into register
+lw $s1, i           # loads i into register
+lw $s2, j           # loads j into register
+
+
+
+beq $s1, $s2, done    # branches if i and j are equal
+sw $s0, 1             # sets value of x to 1 if above condition
+
+
+done: add $s0, $s0, 2    #branch
+ 
+add $s0, $s0, 1    # x = x + 1, run regardless of condition.
